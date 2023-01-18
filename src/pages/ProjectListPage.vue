@@ -38,7 +38,7 @@
             </div>
         </div>
     </section>
-    <div class="container mb-5">
+    <div class="container">
         <div class="row my-5">
             <div class="col-12 col-md-4" v-for="(project, index) in projects" :key="index">
                 <div class="card m-auto" style="width: 18rem;">
