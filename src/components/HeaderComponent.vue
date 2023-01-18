@@ -89,7 +89,7 @@ header{
                 display: block;
                 width: 0%;
                 height: 6px;
-                background: $bg-color-pink;
+                background: $bg-color-mint;
                 position: absolute;
                 bottom: 0;
                 z-index: -1;
@@ -100,7 +100,7 @@ header{
                 display: block;
                 width: 100%;
                 height: 6px;
-                background: $bg-color-pink;
+                background: $bg-color-mint;
                 position: absolute;
                 bottom: 0;
                 z-index: -1;

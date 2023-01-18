@@ -38,9 +38,10 @@
             </div>
         </div>
     </section>
-        <!-- <div class="row my-5">
+    <div class="container mb-5">
+        <div class="row my-5">
             <div class="col-12 col-md-4" v-for="(project, index) in projects" :key="index">
-                <div class="card" style="width: 18rem;">
+                <div class="card m-auto" style="width: 18rem;">
                     <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.title">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title}}</h5>
@@ -54,11 +55,14 @@
         </div>
 
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <ul class="pagination justify-content-center">
                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item" v-for="n in lastPage"><a class="page-link" @click="getProjects(n)">{{n}}</a></li>    
+                <li class="page-item" v-for="n in lastPage"><a class="page-link" @click="getProjects(n)">{{n}}</a></li>  
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>  
             </ul>
-        </nav> -->
+        </nav>
+    </div>
+    
     
 </template>
 
@@ -251,5 +255,6 @@ import {store} from '../store';
                
             }
         }
+
     }
 </style>
