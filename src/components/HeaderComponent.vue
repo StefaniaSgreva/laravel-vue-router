@@ -5,7 +5,7 @@
         <i class="fa-solid fa-code"></i>
         
         <nav>
-            <ul class="d-flex">
+            <ul>
                 <li class="ms-5" v-for="(item, index) in menuItems" :key="index">
                     <router-link :to="{name : item.routeName}" active-class="active" class="strike">
                     {{ item.label }}
@@ -42,7 +42,7 @@
         }
     }
    
-    }
+}
 </script>
 
 <style lang="scss" scoped>
