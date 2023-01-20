@@ -4,7 +4,6 @@
             <img  v-if="project.cover_image" :src="`${store.imageBasePath}${project.cover_image}`" :alt="project.title">
             <img v-else src="https://picsum.photos/id/20/1920/1080" alt="default image">
         </div>
-        <!-- <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.title"> -->
         <div class="card-body">
             <h5 class="card-title">{{ project.title}}</h5>
             <p class="card-text">{{truncateContent}}</p>

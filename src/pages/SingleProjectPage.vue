@@ -19,6 +19,12 @@
              </div>
          </div>
     </section>
+    <div v-else class="loader-container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <span class="loading">Loading...</span>
+    </div>
  </template>
  
  <script>
@@ -80,4 +86,65 @@
         margin: 0 auto;
         padding: 0 3rem;
     }
+
+    //loader
+    .loader-container{
+        width: 100%;
+        height: calc(100vh - 120px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ring{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 0 solid $bg-color-white;
+        border-radius: 50%;
+    }
+    .ring:nth-child(1){
+        border-bottom-width: 8px;
+        border-color: $bg-color-coral;
+        animation: rotate1 2s linear infinite;
+    }
+    .ring:nth-child(2){
+        border-bottom-width: 8px;
+        border-color: $bg-color-mint;
+        animation: rotate2 2s linear infinite;
+    }
+    .ring:nth-child(3){
+        border-bottom-width: 8px;
+        border-color: $bg-color-pink;
+        animation: rotate3 2s linear infinite;
+    }
+    .loading{
+        color: $text-color-gray;
+    }
+
+    @keyframes rotate1{
+        0%{
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+        }
+        100%{
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+        }
+    }
+    @keyframes rotate2{
+        0%{
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+        }
+        100%{
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+        }
+    }
+    @keyframes rotate3{
+        0%{
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+        }
+        100%{
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+        }
+    }
+    
  </style>

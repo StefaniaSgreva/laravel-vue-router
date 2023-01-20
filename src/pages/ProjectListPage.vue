@@ -102,13 +102,6 @@ import ProjectCard from '../components/ProjectCard.vue';
 
                 })
             },
-            // truncateContent(text){
-            //     if(text.length > this.contentMaxLen){
-            //         return text.substr(0,this.contentMaxLen) + '...';
-            //     } else {
-            //         return text;
-            //     }
-            // }
         },
         mounted(){
             this.getProjects(1);
