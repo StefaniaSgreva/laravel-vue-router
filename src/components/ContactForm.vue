@@ -29,7 +29,7 @@
                                     {{ error }}
                                 </div>
                         </div>
-                        <button class="btn btn-lg btn-primary text-white" type="submit" 
+                        <button class="call-btn" type="submit" 
                         :disabled="loading">{{loading ? 'Sending...' : 'Send'}}</button>
                     </form>
                 </div>

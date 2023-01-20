@@ -9,7 +9,7 @@
                     </div>
                     
                     <h2>Stefania<br>Sgreva</h2>
-                    <h3>Front End Developer</h3>
+                    <h3>UI / UX Designer<br>Front End Developer</h3>
                 </div>
 
                 <ul class="icons">
@@ -85,7 +85,8 @@
         text-transform: uppercase;
         font-weight: 300;
         letter-spacing: 5px;
-        margin-top: 2rem;
+        line-height: 2rem;
+        margin-top: 1.5rem;
         font-size: 1rem;
     }
     .icons{
