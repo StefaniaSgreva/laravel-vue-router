@@ -61,3 +61,22 @@ a:hover{
     margin: 0 auto;
     // border: 1px solid red;
 }
+.call-btn{
+    align-self: flex-end;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $aside-menu;
+    border: 2px solid $aside-menu;
+    border-radius: 20px;
+    outline: 2px solid $bg-color-mint;
+    text-shadow: 2px 2px $bg-color-mint;
+    font-family: inherit;
+    background-color: transparent;
+    margin-right: 1rem;
+
+
+    i{
+        margin-left: .5rem;
+    }
+}

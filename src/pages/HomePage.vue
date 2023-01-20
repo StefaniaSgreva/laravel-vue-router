@@ -1,5 +1,16 @@
 <template>
     <div>
+        <div class="my-container mt-5 top-hero">
+            <h1>Hello, I'm Stefania<br>A UI / UX Designer & Front End Developer</h1>
+            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in dapibus. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit.</p>
+            <div class="call-to-actions d-flex">
+                <button class="call-btn">Get a free quote<i class="fa-solid fa-angles-right"></i></button>
+                <button class="call-btn">My Portfolio<i class="fa-solid fa-angles-right"></i></button>
+            </div>
+        </div>
+        <section id="home-hero">
+
+        </section>
         <section id="featured-project-one">
         <div class="project my-container">
             <div class="descriptions">
@@ -41,6 +52,27 @@
 @use '../assets/styles/partials/variables' as *;
 @use '../assets/styles/partials/mixins' as *;
 
+.top-hero{
+    h1{
+        line-height: 4rem;
+
+    }
+
+    p{
+        margin: 2rem 0;
+        max-width: 700px;
+        line-height: 2rem;
+    }
+}
+
+#home-hero{
+    margin-top: -120px;
+    height: 1000px;
+    background-image: url(../assets/img/web-dev-23.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 #featured-project-one{
         width: 100%;
         height: 600px;
