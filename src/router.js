@@ -38,7 +38,9 @@ const router = createRouter({
             component: ContactUsPage
         },
         {
-            path: '/*',
+            //IL NOT-FOUND VA MESSO PER ULTIMO
+            // path: '/*', sembra questo metodo non funzioni più bene
+            path: "/:pathMatch(.*)*",
             name: 'not-found',
             component: NotFound
         }
