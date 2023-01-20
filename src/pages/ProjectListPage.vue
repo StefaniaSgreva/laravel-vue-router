@@ -38,10 +38,15 @@
             </div>
         </div>
     </section>
+    
     <div class="container">
         <div class="row my-5">
             <div class="col-12 col-md-4" v-for="(project, index) in projects" :key="index">
-                <div class="card m-auto" style="width: 18rem;">
+                
+                <ProjectCard :project="project"/>
+                
+                
+                <!-- <div class="card m-auto" style="width: 18rem;">
                     <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.title">
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title}}</h5>
@@ -50,17 +55,26 @@
                             Show Project
                         </router-link>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item" v-for="n in lastPage"><a class="page-link" @click="getProjects(n)">{{n}}</a></li>  
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>  
+                <li class="page-item" :class="{'disabled': currentPage === 1}">
+                    <button class="page-link" :disabled="currentPage === 1" @click="getProjects(currentPage - 1)">Previous
+                    </button>
+                </li>
+                <li class="page-item" v-for="n in lastPage">
+                    <button class="page-link" @click="getProjects(n)">{{n}}</button>
+                 </li>
+                 <li class="page-item" :class="{'disabled': currentPage === lastPage}">
+                    <button class="page-link" :disabled="currentPage === lastPage" @click="getProjects(currentPage + 1)">Next
+                    </button>
+                 </li>  
             </ul>
         </nav>
+
     </div>
     
     
@@ -69,6 +83,7 @@
 <script>
 import axios from 'axios';
 import {store} from '../store';
+import ProjectCard from '../components/ProjectCard.vue';
 
     export default {
         name: 'ProjectList',
@@ -76,10 +91,10 @@ import {store} from '../store';
             return {
                 store,
                 projects: [],
-                currenPage: 1,
+                currentPage: 1,
                 lastPage: null,
                 totlal: 0,
-                contentMaxLen: 100
+                // contentMaxLen: 100
             }
         },
         methods:{
@@ -95,17 +110,18 @@ import {store} from '../store';
 
                 })
             },
-            truncateContent(text){
-                if(text.length > this.contentMaxLen){
-                    return text.substr(0,this.contentMaxLen) + '...';
-                } else {
-                    return text;
-                }
-            }
+            // truncateContent(text){
+            //     if(text.length > this.contentMaxLen){
+            //         return text.substr(0,this.contentMaxLen) + '...';
+            //     } else {
+            //         return text;
+            //     }
+            // }
         },
         mounted(){
             this.getProjects(1);
-        }
+        },
+        components: { ProjectCard }
     }
 </script>
 
