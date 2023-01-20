@@ -44,18 +44,7 @@
             <div class="col-12 col-md-4" v-for="(project, index) in projects" :key="index">
                 
                 <ProjectCard :project="project"/>
-                
-                
-                <!-- <div class="card m-auto" style="width: 18rem;">
-                    <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.title">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.title}}</h5>
-                        <p class="card-text">{{truncateContent(project.content)}}</p>
-                        <router-link class="btn btn-primary" :to="{name: 'single-project', params:{slug:project.slug}}">
-                            Show Project
-                        </router-link>
-                    </div>
-                </div> -->
+    
             </div>
         </div>
 
@@ -87,6 +76,9 @@ import ProjectCard from '../components/ProjectCard.vue';
 
     export default {
         name: 'ProjectList',
+        components: {
+            ProjectCard
+        },
         data(){
             return {
                 store,
@@ -121,7 +113,6 @@ import ProjectCard from '../components/ProjectCard.vue';
         mounted(){
             this.getProjects(1);
         },
-        components: { ProjectCard }
     }
 </script>
 
